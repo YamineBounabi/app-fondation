@@ -1,0 +1,14 @@
+<template name="quizz">
+  <div>
+  {{#with randomquizz}}
+    <div>
+      {{question}}
+    </div>
+    <ul>
+      {{#each answers}}
+      <li><a href="#">{{this}}</a></li>
+      {{/each}}
+    </ul>
+  {{/with}}
+  </div>
+</template>

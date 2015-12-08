@@ -1,0 +1,30 @@
+<template name="admin">
+  <h1>Admin</h1>
+
+  <h2>Ajout d'une question</h2>
+
+  <form id="addquestion">
+    <label for="text">Question :</label><input type="text" name="question" value="">
+    <label>Réponse 1</label><input type="text" name="answers[]" value="">
+    <label>Réponse 2</label><input type="text" name="answers[]" value="">
+    <label>Réponse 3</label><input type="text" name="answers[]" value="">
+    <label>Réponse 4</label><input type="text" name="answers[]" value="">
+    <label for="validanswer">Bonne réponse</label>
+    <select name="validanswer">{{{valeursreponses}}}</select>
+    <input type="submit" name="enregistrer" value="Enregistrer">
+  </form>
+
+  <h2>Liste des questions</h2>
+
+  <ul>
+    {{#each questions}}
+    <li>
+      <div>Question : {{question}}</div>
+      <div>Réponses possibles : {{answers}}</div>
+      <div>Bonne réponse : {{validanswer}}</div>
+      <a href="#" class="delete" data-id="{{_id}}">Effacer</a>
+    </li>
+    {{/each}}
+  </ul>
+
+</template>
