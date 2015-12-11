@@ -38,6 +38,8 @@ Template.admin.events({
       }
 
       Questions.insert(objQuestion);
+
+      document.getElementById("addquestion").reset();
   },
   "click .delete": function(event){
     event.preventDefault;
