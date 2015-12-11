@@ -31,10 +31,16 @@
       {{#each questions}}
       <li>
         <div>
-          <u>Question :</u> {{question}}
+          <u>Question :</u>
+          <strong>{{question}}</strong>
         </div>
         <div>
-          <u>Réponses possibles :</u> {{answers}}
+          <u>Réponses possibles :</u>
+          <ul>
+            {{#each answers}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
         </div>
         <div>
           <u>Bonne réponse :</u>  {{validanswer}}

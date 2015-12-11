@@ -13,6 +13,7 @@ if (Meteor.isClient) {
 
   Router.route('/quizz');
   Router.route('/admin');
+  Router.route('/leaderboard');
 
 }
 
