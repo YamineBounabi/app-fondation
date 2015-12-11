@@ -1,61 +1,63 @@
-body{
-	background-image:url("http://www.wallfizz.com/nature/couche-de-soleil/5518-couche-de-soleil-au-dessus-des-nuages-WallFizz.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment:fixed;
-}
-
 
 .container{
-    width: 70%;
-    margin: auto;
-    text-align: center;
-    font-family: Arial;
-    box-shadow: 2px 4px 14px #aaa;
-    background:white;
-    opacity: 0.92;
+	width: 900px;
+	margin: auto;
+	text-align: center;
+	font-family: Arial;
+	box-shadow: 2px 4px 14px #aaa;
+	background:white;
+	opacity: 0.92;
 
-    a{
-    	text-decoration:none;
-    }
+	a{
+		text-decoration:none;
+	}
 
-    h2{
-    	padding-top: 39px;
-    	    text-align: center;
-    		text-shadow: 3px 4px 2px mediumaquamarine;
-    		text-transform: uppercase;
-    		font-family: arial;
-        	color: darkslategrey;
-        	padding-bottom: 15px;
-    }
+	h2{
+		padding-top: 39px;
+		text-align: center;
+		text-shadow: 3px 4px 2px mediumaquamarine;
+		text-transform: uppercase;
+		font-family: arial;
+		color: darkslategrey;
+		padding-bottom: 15px;
+	}
+
+	h1{
+		text-align:center;
+		text-shadow: 3px 4px 2px grey;
+		text-transform: uppercase;
+		font-family: arial;
+		color: white;
+		font-size: 40px;
+	}
+
 
 }
 
 
-h1{
-	text-align:center;
-    text-shadow: 3px 4px 2px grey;
-    text-transform: uppercase;
-    font-family: arial;
-    color: white;
-}
 
 
 ul.newquestion{
 	list-style:none;
-    padding-left:0px;
+	padding-left:0px;
 
-    li{
-    	list-style:none;
+	li{
+		list-style:none;
+		width: 100%;
+		display: inline-block;
+		text-align: left;
+		padding-left : 50px;
+		box-sizing: border-box;
 
-        div:nth-child(2){
-            font-size: 20px;
-        }
-    }
+		&:nth-child(even){
 
-    div{
-    	padding-top:15px;
-    }
+		}
+
+	}
+
+	div{
+		padding-top:15px;
+	}
 }
 
 
@@ -63,59 +65,65 @@ ul.newquestion{
 	list-style:none;
 	padding-left:0px;
 
-    
+
 	li{
 		list-style:none;
 
-        input[type="text"]{
+		&:first-child {
+			label {
+				font-weight: bold;
+			}
+		}
+
+		input[type="text"]{
 			width:50%;
 			margin-left:30px;
-			border-radius: 6px;
-			outline:none;		
-	    }
+			border-radius: 5px;
+			outline:none;
+			padding: 5px;
+		}
 
-        select {
-        	height: 25px;
-    		width: 87px;
-    		background: navajowhite;
-    		border-radius: 6px;
-		}      
-         
-    }
+		select {
+			height: 25px;
+			width: 87px;
+			background: navajowhite;
+			border-radius: 6px;
+		}
+
+	}
 
 }
 
 
 .container{
 
-		input[type="submit"] {
-    		color: white;
-    		background: #44a2d6;
-    		font-weight: bold;
-    		height: 30px;
-    		width: 117px;
-    		border-radius: 9px;
-    		outline: none;
-    		text-transform: uppercase;
-    	}
+	input[type="submit"] {
+		color: white;
+		background: #44a2d6;
+		font-weight: bold;
+		height: 30px;
+		width: 117px;
+		border-radius: 9px;
+		outline: none;
+		text-transform: uppercase;
+	}
 
-    button{
-    	color: white;
-    	background: #44a2d6;
-    	font-weight: bold;
-    	height: 30px;
-    	width: 117px;
-    	border-radius: 9px;
-    	outline: none;
-    	text-transform: uppercase;
-    	margin-top: 13px;
-    	margin-bottom: 25px;
-    	color:white;
-        cursor: pointer;
-    }
+	button{
+		color: white;
+		background: #44a2d6;
+		font-weight: bold;
+		height: 30px;
+		width: 117px;
+		border-radius: 9px;
+		outline: none;
+		text-transform: uppercase;
+		margin-top: 13px;
+		margin-bottom: 25px;
+		color:white;
+		cursor: pointer;
+	}
 
-    li{
-    	padding-top:20px;
-    }
+	li{
+		padding-top:20px;
+	}
 }
-

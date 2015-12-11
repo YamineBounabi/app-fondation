@@ -1,6 +1,6 @@
 Template.admin.helpers({
   questions: function(){
-    return Questions.find({});
+    return Questions.find({}, {sort: {dateAdded: -1}});
   },
   valeursreponses: function(){
     var html = "";
@@ -8,11 +8,20 @@ Template.admin.helpers({
       html += "<option value='"+i+"'>"+i+"</option>";
     }
     return html;
+  },
+  categories: function(){
+    var tab = ["fondation","fun","simplon","culture code","random"];
+    var html = "";
+    for(i in tab){
+      html += "<option value='"+tab[i]+"'>"+tab[i]+"</option>";
+    }
+    return html;
   }
 });
 
 Template.admin.events({
   "submit #addquestion": function(event, template){
+    console.log("jhk");
       event.preventDefault();
 
       var tabAnswers = [];
@@ -23,7 +32,9 @@ Template.admin.events({
       var objQuestion = {
         question : event.target.question.value,
         validanswer: event.target.validanswer.value,
-        answers : tabAnswers
+        answers : tabAnswers,
+        category : event.target.category.value,
+        dateAdded : new Date()
       }
 
       Questions.insert(objQuestion);

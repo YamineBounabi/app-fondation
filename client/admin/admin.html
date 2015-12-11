@@ -1,6 +1,8 @@
 <template name="admin">
-  <h1>Admin</h1>
+
   <div class="container">
+
+    <h1>Admin</h1>
 
     <h2>Ajout d'une question</h2>
 
@@ -11,10 +13,16 @@
         <li><label>Réponse 2</label><input type="text" name="answers[]" value=""></li>
         <li><label>Réponse 3</label><input type="text" name="answers[]" value=""></li>
         <li><label>Réponse 4</label><input type="text" name="answers[]" value=""></li>
-        <li><label for="validanswer">Bonne réponse</label></li>
-        <li><select name="validanswer">{{{valeursreponses}}}</select></li>
+        <li>
+          <label for="validanswer">Bonne réponse</label>
+          <select name="validanswer">{{{valeursreponses}}}</select>
+        </li>
+        <li>
+          <label for="category">Catégorie</label>
+          <select name="category">{{{categories}}}</select>
+        </li>
         <li><input type="submit" name="enregistrer" value="Enregistrer"></li>
-      </ul>  
+      </ul>
     </form>
 
     <h2>Liste des questions</h2>
@@ -25,9 +33,10 @@
         <div>Question : {{question}}</div>
         <div>Réponses possibles : {{answers}}</div>
         <div>Bonne réponse : {{validanswer}}</div>
+        <div>Catégorie : {{category}}</div>
         <button class="delete" data-id="{{_id}}">Effacer</button>
       </li>
       {{/each}}
     </ul>
-</div>  
+</div>
 </template>
