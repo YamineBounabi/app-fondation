@@ -30,10 +30,18 @@
     <ul class="newquestion">
       {{#each questions}}
       <li>
-        <div>Question : {{question}}</div>
-        <div>Réponses possibles : {{answers}}</div>
-        <div>Bonne réponse : {{validanswer}}</div>
-        <div>Catégorie : {{category}}</div>
+        <div>
+          <u>Question :</u> {{question}}
+        </div>
+        <div>
+          <u>Réponses possibles :</u> {{answers}}
+        </div>
+        <div>
+          <u>Bonne réponse :</u>  {{validanswer}}
+        </div>
+        <div>
+          <u>Catégorie :</u> {{category}}
+        </div>
         <button class="delete" data-id="{{_id}}">Effacer</button>
       </li>
       {{/each}}

@@ -49,14 +49,9 @@ ul.newquestion{
 		padding-left : 50px;
 		box-sizing: border-box;
 
-		&:nth-child(even){
-
+		div{
+			padding-top:15px;
 		}
-
-	}
-
-	div{
-		padding-top:15px;
 	}
 }
 
