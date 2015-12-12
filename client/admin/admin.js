@@ -2,6 +2,9 @@ Template.admin.helpers({
   questions: function(){
     return Questions.find({}, {sort: {dateAdded: -1}});
   },
+  nbquestions: function(){
+    return Questions.find({}, {sort: {dateAdded: -1}}).count();
+  },
   valeursreponses: function(){
     var html = "";
     for(i=1;i<5;i++){
@@ -45,5 +48,8 @@ Template.admin.events({
     event.preventDefault;
     var elt = event.target;
     Questions.remove($(elt).data("id"));
+  },
+  "click .deleteAllSessions": function(event){
+    //TODO: DELETE ALL SESSIONS AND USERS
   }
 });

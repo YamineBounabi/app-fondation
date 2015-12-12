@@ -2,4 +2,12 @@
 
   <h1>Leaderboard</h1>
 
+  <h2>Dernière bonne réponse par : {{lastGoodAnswer}} </h2>
+
+  <ul>
+    {{#each users}}
+    <li>{{profile.name}} : {{profile.score}}</li>
+    {{/each}}
+  </ul>
+
 </template>

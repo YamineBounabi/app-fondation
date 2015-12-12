@@ -1,12 +1,12 @@
 <template name="quizz">
   <div>
   {{#with randomquizz}}
-    <div>
+    <div id="question" data-valid="{{validanswer}}">
       {{question}}
     </div>
-    <ul>
+    <ul id="quizzAnswers">
       {{#each answers}}
-      <li><a href="#">{{this}}</a></li>
+      <li><a href="#" data-index="{{@index}}">{{this}}</a></li>
       {{/each}}
     </ul>
   {{/with}}
