@@ -1,13 +1,18 @@
+
 <template name="leaderboard">
 
-  <h1>Leaderboard</h1>
+<div class='leaderboard'>
+  <h1><span><strong>Leaderboard</strong></span></h1>
 
-  <h2>Dernière bonne réponse par : {{lastGoodAnswer}} </h2>
+  <div class="content">
+    <h2>Dernière bonne réponse par : {{lastGoodAnswer}} </h2><br />
 
-  <ul>
-    {{#each users}}
-    <li>{{profile.name}} : {{profile.score}}</li>
-    {{/each}}
-  </ul>
+    <ul>
+        {{#each users}}
+        <li><div class="score"><strong>{{profile.name}} :</strong></div> <div class="score" id="placescore">{{profile.score}}</div></li>
+        {{/each}}
+    </ul>
+  </div>
+</div>
 
 </template>
