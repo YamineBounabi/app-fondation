@@ -3,16 +3,17 @@
     outline: none;
 }
 
-.quizz{
+.div-quizz{
     font-family: arial;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-32.jpg");
-	min-height: 100%;
 	background-size: cover;
-	position: absolute;
+	text-align: center;
+	min-height: 100%;
 	width: 100%;
+	position: absolute;
 
     h2{
     	text-align: center;
@@ -21,7 +22,6 @@
 		font-weight: bold;
 		font-family: Arial;
 		color: #FFF;
-		text-shadow: -1px 0px 5px;
 		padding-top: 30px;
     }
 
@@ -32,7 +32,6 @@
 		font-weight: bold;
 		font-family: Arial;
 		color: white;
-		text-shadow: -1px 0px 5px;
 		padding: 25px;
         border: 1px solid;
         border-radius: 72px;
@@ -48,7 +47,7 @@
         	background-color: #09127F;
         }
         li:nth-child(2){
-        	background-color: #FFEA00;
+        	background-color: #91CE17;
         	margin-top: 5px;
         }
         li:nth-child(3){
@@ -69,14 +68,29 @@
 
 			a{
 				text-decoration: none;
-                color: black;
+                color: white;
                 display: block;
-                height: 58%;
-				padding-top: 35px;
-				font-family: "Tillana",cursive;
+                height: 65%;
+				padding-top: 29px;
+				font-family: "Caveat",cursive;
+				font-size: 22px;
 			}
         }
 
 	}
 
+}
+
+
+
+.titre-mauvaise-reponse,.titre-bonne-reponse{
+	font-family: "Caveat",cursive;
+	font-size: 62px;
+	padding-top: 58px;
+}
+
+.lien-mauvaise-reponse,.lien-bonne-reponse{
+	font-family: "Caveat",cursive;
+	font-size: 51px;
+	display: block;	
 }
