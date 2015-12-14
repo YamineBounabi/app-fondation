@@ -1,4 +1,23 @@
 
+body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    word-wrap: break-word;
+}
+
+.background{
+	background-image:url("http://www.wallfizz.com/nature/couche-de-soleil/5518-couche-de-soleil-au-dessus-des-nuages-WallFizz.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    min-height: 100%;
+}
+
+
 .container{
 	width: 900px;
 	margin: auto;
@@ -39,7 +58,16 @@
 
 ul.newquestion{
 	list-style:none;
-	padding-left:0px;
+
+    padding-left:0px;
+
+    li{
+    	list-style:none;
+
+        div:first-child{
+            font-size: 20px;
+        }
+    }
 
 	li{
 		list-style:none;
@@ -117,6 +145,7 @@ ul.newquestion{
 		color:white;
 		cursor: pointer;
 	}
+
 
 	li{
 		padding-top:20px;

@@ -1,12 +1,13 @@
 <template name="quizz">
-  <div>
+  <div class="quizz">
   {{#with randomquizz}}
-    <div id="question" data-valid="{{validanswer}}">
+    <div id="question" data-valid="{{validanswer}}" class="question animated linear zoomInDown">
       {{question}}
     </div>
+    <h2 class="animated linear zoomInDown">Réponse Possible</h2>
     <ul id="quizzAnswers">
       {{#each answers}}
-      <li><a href="#" data-index="{{@index}}">{{this}}</a></li>
+      <li class="animated linear bounceInRight"><a href="#" data-index="{{@index}}" class="animated ease fadeInUpBig">{{this}}</a></li>
       {{/each}}
     </ul>
   {{/with}}
