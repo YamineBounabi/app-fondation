@@ -1,7 +1,7 @@
 <template name="quizz">
   <div class="quizz">
   {{#with randomquizz}}
-    <div id="question" data-valid="{{validanswer}}" class="question animated linear zoomInDown">
+    <div id="question" data-id={{_id}} data-valid="{{validanswer}}" class="question animated linear zoomInDown">
       {{question}}
     </div>
     <h2 class="animated linear zoomInDown">Réponse Possible</h2>
