@@ -12,7 +12,7 @@ Template.login.events({
        var userNameVal = $("#username").val();
        Session.setPersistent("username", userNameVal);
 
-       Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.name": userNameVal, "profile.score" : 0, "profile.lastgoodanswer" : 0 } });
+       Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.name": userNameVal, "profile.score" : 0, "profile.lastgoodanswer" : 0, "profile.tabanswered": [] } });
 
        Router.go("/");
      }

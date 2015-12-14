@@ -1,14 +1,15 @@
 Template.quizz.helpers({
   randomquizz: function(){
 
-    //TODO : ne pas redonner une question déjà reçu
+    //Filtrage sur les questions déjà répondues
+    var tabUserAnswered = Meteor.users.findOne({_id: Meteor.userId()}).profile.tabanswered;
 
     var query = {};
     var n = Questions.find(query).fetch().length;
     var r = Math.floor(Math.random() * n);
-    var randomElement = Questions.find({},{limit: 1, skip: r}).fetch();
+    var randomElement = Questions.findOne({_id: {$nin: tabUserAnswered}},{limit: 1, skip: r});
 
-    return randomElement[0];
+    return randomElement;
   }
 });
 
@@ -18,6 +19,7 @@ Template.quizz.events({
 
      //console.log($(event.target).data("index"));
      var valid = parseInt($("#question").data("valid"));
+     var questionId = $("#question").data("id");
      var givenanswer =  parseInt($(event.target).data("index")) + 1; //index starts at 0
 
      //Check if answer is correct
@@ -28,6 +30,7 @@ Template.quizz.events({
        Meteor.call("motordown");
 
        //Ajout de la question à la liste déjà répondu
+       Meteor.users.update({_id: Meteor.userId()}, {$push: {"profile.tabanswered" : questionId } });
 
        //Affichage d'un message
        Router.go("/goodanswer");
