@@ -17,5 +17,11 @@ Template.login.events({
 
        Router.go("/");
      }
+  },
+  "keypress input": function(e){
+    if (e.charCode == 13) {
+      e.preventDefault();
+      $("#submit").click();
+    }
   }
 });

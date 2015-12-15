@@ -5,10 +5,12 @@
     <h1><span><strong>Classement</strong></span></h1>
 
     <div class="content">
+      {{#if lastGoodAnswer}}
       <h2>
         Dernière bonne réponse par :<br />
         {{{lastGoodAnswer}}}
       </h2>
+      {{/if}}
 
       <ul>
         {{#each users}}
