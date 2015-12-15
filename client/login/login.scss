@@ -1,0 +1,39 @@
+a,button{
+	text-decoration: none;
+	outline: none;
+}
+
+#loginContainer{
+	font-family: ubuntu;
+	color: white;
+
+	h1{
+		font-size: 8vw;
+		padding-top: 45px;
+	}
+
+	p{
+		padding-top: 32px;
+		font-size: 5vw;
+	
+    	#username{
+    		margin-top: 19px;
+    		border-radius: 13px;
+    		width: 80vw;
+    		padding: 4px;
+    	}
+
+    	#submit{
+    		margin-top: 20px;
+			border-radius: 18px;
+			height: 8vh;
+			width: 42vw;
+			color: white;
+			background: red none repeat scroll 0% 0%;
+			cursor: pointer;
+		}
+
+	}
+
+}
+
