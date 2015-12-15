@@ -1,1 +1,42 @@
 /* style pour la home */
+
+*{
+	text-decoration: none;
+}
+
+.home{
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	h1{
+		font-size: 25px;
+		margin-top: 20px;
+	}
+
+	img {
+    	height: 45px;
+    	padding-top: 10px;
+    	padding-bottom: 4%;
+	}
+    ul{
+
+		li{
+			border-bottom: 1px solid;
+			font-size: 20px;
+			height: 100px;
+			background: #537598;
+
+			a{
+				color: #FFF;
+				padding-top: 40px;
+				height: 60%;
+				width: 100%;
+				display: block;
+			}
+		}
+
+		li:first-child{
+			border-top: 1px solid;
+		}
+
+	}
+}
