@@ -11,6 +11,7 @@ Template.login.events({
 
        var userNameVal = $("#username").val();
        Session.setPersistent("username", userNameVal);
+       Session.setPersistent("tabanswered",[]);
 
        Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.name": userNameVal, "profile.score" : 0, "profile.lastgoodanswer" : 0, "profile.tabanswered": [] } });
 

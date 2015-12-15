@@ -1,15 +1,21 @@
 <template name="quizz">
   <div class="div-quizz">
-  {{#with randomquizz}}
-    <div id="question" data-id={{_id}} data-valid="{{validanswer}}" class="question animated linear zoomInDown">
-      {{question}}
-    </div>
-    <h2 class="animated linear zoomInDown">Réponse Possible</h2>
-    <ul id="quizzAnswers">
-      {{#each answers}}
-      <li class="animated linear bounceInRight"><a href="#" data-index="{{@index}}" class="animated ease fadeInUpBig">{{this}}</a></li>
-      {{/each}}
-    </ul>
-  {{/with}}
+  {{#if randomquizz}}
+    {{#with randomquizz}}
+      <div id="question" data-id={{_id}} data-valid="{{validanswer}}" class="question animated linear zoomInDown">
+        {{question}}
+      </div>
+      <h2 class="animated linear zoomInDown">Réponse Possible</h2>
+      <ul id="quizzAnswers">
+        {{#each answers}}
+        <li class="animated linear bounceInRight"><a href="#" data-index="{{@index}}" class="animated ease fadeInUpBig">{{this}}</a></li>
+        {{/each}}
+      </ul>
+    {{/with}}
+  {{else}}
+  <div id="question" data-id={{_id}} data-valid="{{validanswer}}" class="question animated linear zoomInDown">
+    Plus de questions... Bravo !
+  </div>
+  {{/if}}
   </div>
 </template>

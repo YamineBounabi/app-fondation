@@ -24,10 +24,6 @@ if (Meteor.isClient) {
     //Before rendering!
     console.log("Welcome user " + Meteor.userId());
 
-    //var user = Meteor.users.findOne({_id: Meteor.userId()});
-
-    //Meteor.users.update({_id: user._id}, {$set:..});
-
     //Check if logged in before getting into the app (except for admin where no login is required)
     if (Router.current().route.getName() != "admin" && Router.current().route.getName() != "leaderboard" && ! Session.get("username")) {
       $("body").addClass("login");
@@ -46,6 +42,13 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
 
+    Meteor.users.allow({
+      remove: function(userId, doc) {
+        // JUST FOR TESTING - NEVER DO THIS IN PRODUCTION
+        return true;
+      }
+    });
+
     AccountsGuest.enabled = true;
     AccountsGuest.anonymous = true;
 
@@ -54,15 +57,12 @@ if (Meteor.isServer) {
   Meteor.methods({
     motorup:function(){
       console.log("Motor up!");
-
       try{
         var result = HTTP.get(Meteor.settings.motorUrl + "up", {});
         console.log(result.content);
       }catch(e){
         console.log(e);
       }
-
-
     },
     motordown:function(){
       console.log("Motor down!");
@@ -72,6 +72,9 @@ if (Meteor.isServer) {
       }catch(e){
         console.log(e);
       }
+    },
+    removeAllUsers: function(){
+      Meteor.users.remove({});
     }
   });
 }

@@ -50,6 +50,7 @@ Template.admin.events({
     Questions.remove($(elt).data("id"));
   },
   "click .deleteAllSessions": function(event){
-    //TODO: DELETE ALL SESSIONS AND USERS
+    //Remove all users
+    Meteor.call("removeAllUsers");
   }
 });

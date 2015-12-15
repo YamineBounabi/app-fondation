@@ -2,12 +2,17 @@ Template.quizz.helpers({
   randomquizz: function(){
 
     //Filtrage sur les questions déjà répondues
-    var tabUserAnswered = Meteor.users.findOne({_id: Meteor.userId()}).profile.tabanswered;
+    //var tabUserAnswered = Meteor.users.findOne({_id: Meteor.userId()}).profile.tabanswered;
 
-    var query = {};
+    tabUserAnswered = Session.get("tabanswered");
+    if(! tabUserAnswered){
+      tabUserAnswered = [];
+    }
+console.log(tabUserAnswered);
+    var query = {_id: {$nin: tabUserAnswered}};
     var n = Questions.find(query).fetch().length;
     var r = Math.floor(Math.random() * n);
-    var randomElement = Questions.findOne({_id: {$nin: tabUserAnswered}},{limit: 1, skip: r});
+    var randomElement = Questions.findOne(query,{limit: 1, skip: r});
 
     return randomElement;
   }
@@ -30,7 +35,15 @@ Template.quizz.events({
        Meteor.call("motordown");
 
        //Ajout de la question à la liste déjà répondu
-       Meteor.users.update({_id: Meteor.userId()}, {$push: {"profile.tabanswered" : questionId } });
+       //Meteor.users.update({_id: Meteor.userId()}, {$push: {"profile.tabanswered" : questionId } });
+       if(Session.get("tabanswered")){
+         var tab = Session.get("tabanswered");
+         console.log(tab);
+         tab.push(questionId);
+         Session.setPersistent("tabanswered",tab);
+       }else{
+         Session.setPersistent("tabanswered",[questionId]);
+       }
 
        //Affichage d'un message
        Router.go("/goodanswer");
