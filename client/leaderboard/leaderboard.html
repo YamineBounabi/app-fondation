@@ -1,8 +1,12 @@
 
 <template name="leaderboard">
 
+  <div class="annonce">Rendez-vous sur http://bit.do/simplon</div>
+
   <div class='leaderboard'>
-    <h1><span><strong>Classement</strong></span></h1>
+    <h1>
+      <span><strong>Classement</strong></span>
+    </h1>
 
     <div class="content">
       {{#if lastGoodAnswer}}
@@ -16,9 +20,9 @@
         {{#each users}}
         <li>
           <div class="score">
-            <strong>{{profile.name}} :</strong>
+            <strong>{{username}} :</strong>
           </div>
-          <div class="score right">{{profile.score}}</div>
+          <div class="score right">{{score}}</div>
         </li>
         {{/each}}
       </ul>

@@ -7,18 +7,23 @@
   -webkit-box-sizing: border-box;
 }
 
-.leaderboard{
+body.leaderboard{
   background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-32.jpg");
 }
 
-.leaderboard {
+.annonce{
+  text-align: center;
+  font-size: 40px;
+}
+
+div.leaderboard {
   position:relative;
   width:70%;
   height:70%;
   max-width:960px;
   min-width:400px;
   min-height:600px;
-  margin: 30px auto 0 auto;
+  margin: 0px auto 0 auto;
   padding:3%;
   font-family: 'Ubuntu', sans-serif;
 
@@ -39,7 +44,6 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 35px;
-    margin:30px;
     padding:0;
     color: #cc7713;
   }

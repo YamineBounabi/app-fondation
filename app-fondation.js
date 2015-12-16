@@ -3,8 +3,16 @@
 ///////////////////////
 
 Questions = new Mongo.Collection("questions");
+Answers = new Mongo.Collection("answers");
 
 if (Meteor.isClient) {
+
+  //Subscribe
+  Meteor.subscribe("questionsAndAnswers", {
+    onReady: function(){
+      $("#loader").hide();
+    }
+  });
 
   //Routage
   Router.route('/', function () {
@@ -22,12 +30,13 @@ if (Meteor.isClient) {
   //Check if user has entered his name before arriving (except admin)
   Router.onBeforeAction(function () {
     //Before rendering!
-    console.log("Welcome user " + Meteor.userId());
+    console.log("Rendering: " + Router.current().route.getName());
 
     //Check if logged in before getting into the app (except for admin where no login is required)
-    if (Router.current().route.getName() != "admin" && Router.current().route.getName() != "leaderboard" && ! Session.get("username")) {
+    var loggedin = Session.get("username");
+
+    if (Router.current().route.getName() != "admin" && Router.current().route.getName() != "leaderboard" && ! loggedin) {
       $("body").addClass("login");
-      $("#loading").hide();
       this.render('login');
     }else{
       $("body").addClass(Router.current().route.getName());
@@ -42,24 +51,50 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
 
-    Meteor.users.allow({
-      remove: function(userId, doc) {
-        // JUST FOR TESTING - NEVER DO THIS IN PRODUCTION
+    Questions.allow({
+      insert: function(){
+        return true;
+      },
+      update: function(){
+        return true;
+      },
+      remove: function(){
         return true;
       }
     });
 
-    AccountsGuest.enabled = true;
-    AccountsGuest.anonymous = true;
+    Answers.allow({
+      insert: function(){
+        return true;
+      },
+      update: function(){
+        return true;
+      },
+      remove: function(){
+        return true;
+      }
+    });
+
+    Meteor.publish("questionsAndAnswers", function () {
+      return [
+        Questions.find({}),
+        Answers.find({})
+      ];
+    });
 
   });
 
   Meteor.methods({
+    insertAnswer: function(userName,questionId){
+      Answers.insert({answeredId: questionId, username: userName, answerTime: new Date() });
+    },
     motorup:function(){
       console.log("Motor up!");
       try{
-        var result = HTTP.get(Meteor.settings.motorUrl + "up", {});
-        console.log(result.content);
+        var result = HTTP.get(Meteor.settings.motorUrl + "up", function(){
+          console.log("HTTP up requested...");
+          console.log(result.content);
+        });
       }catch(e){
         console.log(e);
       }
@@ -67,14 +102,17 @@ if (Meteor.isServer) {
     motordown:function(){
       console.log("Motor down!");
       try{
-        var result = HTTP.get(Meteor.settings.motorUrl + "up", {});
+        var result = HTTP.get(Meteor.settings.motorUrl + "down", function(){
+          console.log("HTTP down requested...");
+          console.log(result.content);
+        });
         console.log(result.content);
       }catch(e){
         console.log(e);
       }
     },
-    removeAllUsers: function(){
-      Meteor.users.remove({});
+    removeAnswers: function(){
+      Answers.remove({});
     }
   });
 }

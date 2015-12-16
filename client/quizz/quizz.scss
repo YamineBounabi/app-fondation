@@ -1,113 +1,112 @@
 * {
-    word-wrap: break-word;
-    outline: none;
+  word-wrap: break-word;
+  outline: none;
 }
 
 .div-quizz{
-    font-family: arial;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-32.jpg");
-	background-size: cover;
-	text-align: center;
-	min-height: 100vh;
-	width: 100vw;
-	position: absolute;
-	overflow: hidden;
-    -webkit-overflow: hidden;
+  font-family: arial;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-32.jpg");
+  background-size: cover;
+  text-align: center;
+  min-height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+  -webkit-overflow: hidden;
 
 
-    h2{
-    	text-align: center;
-		font-size: 20px;
-		text-transform: uppercase;
-		font-weight: bold;
-		font-family: Arial;
-		color: #FFF;
-		padding-top: 30px;
+  h2{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial;
+    color: #FFF;
+    padding-top: 30px;
+  }
+
+  .question{
+    text-align: center;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial;
+    color: white;
+    padding: 25px;
+    border: 1px solid;
+    border-radius: 72px;
+    margin-top: 15px;
+  }
+
+
+  ul{
+    text-align: center;
+    margin-top: 35px;
+
+    li:nth-child(1){
+      background-color: #09127F;
+    }
+    li:nth-child(2){
+      background-color: #91CE17;
+      margin-top: 5px;
+    }
+    li:nth-child(3){
+      background-color: #E81112;
+      margin-top: 5px;
+    }
+    li:nth-child(4){
+      background-color: #6E6E6E;
+      margin-top: 5px;
     }
 
-	.question{
-		text-align: center;
-		font-size: 17px;
-		text-transform: uppercase;
-		font-weight: bold;
-		font-family: Arial;
-		color: white;
-		padding: 25px;
-        border: 1px solid;
-        border-radius: 72px;
-        margin-top: 15px;
-	}
 
+    li{
+      height: 14.1vh;
+      border-bottom: 1px solid;
+      box-shadow: 4px 2px 13px white;
+      border-radius: 50px;
+      width: 97vw;
+      margin: auto;
 
-	ul{
-		text-align: center;
-		margin-top: 35px;
-	
-        li:nth-child(1){
-        	background-color: #09127F;
-        }
-        li:nth-child(2){
-        	background-color: #91CE17;
-        	margin-top: 5px;
-        }
-        li:nth-child(3){
-        	background-color: #E81112;
-        	margin-top: 5px;
-        }
-        li:nth-child(4){
-        	background-color: #6E6E6E;
-            margin-top: 5px;
-        }
+      a{
+        text-decoration: none;
+        color: white;
+        display: block;
+        height: 100%;
+        padding-top: 22px;
+        font-size: 16px;
+        border: none;
+        border: 0;
+      }
+    }
 
-
-        li{
-        	height: 14.1vh;
-			border-bottom: 1px solid;
-			box-shadow: 4px 2px 13px white;
-			border-radius: 50px;
-			width: 97vw;
-			margin: auto;
-
-			a{
-				text-decoration: none;
-                color: white;
-                display: block;
-                height: 100%;
-				padding-top: 22px;
-				font-family: "Caveat",cursive;
-				font-size: 4vw;
-				border: none;
-				border: 0;
-			}
-        }
-
-	}
+  }
 
 }
 
 
 
 .titre-mauvaise-reponse,.titre-bonne-reponse{
-	font-family: "Caveat",cursive;
-	font-size: 62px;
-	padding-top: 58px;
+  font-family: "Caveat",cursive;
+  font-size: 62px;
+  padding-top: 58px;
 }
 
 .lien-mauvaise-reponse,.lien-bonne-reponse{
-	font-family: "Caveat",cursive;
-	padding-top: 30px;
-	font-family: "Caveat",cursive;
-	font-size: 29px;
-	height: 18vh;
-	border-bottom: 1px solid;
-	box-shadow: 4px 2px 13px #FFF;
-	border-radius: 50px;
-	width: 82vw;
-	margin: auto;
-	background: black;
-	display: block;
-	color: #FFF;	
+  font-family: "Caveat",cursive;
+  padding-top: 30px;
+  font-family: "Caveat",cursive;
+  font-size: 29px;
+  height: 18vh;
+  border-bottom: 1px solid;
+  box-shadow: 4px 2px 13px #FFF;
+  border-radius: 50px;
+  width: 82vw;
+  margin: auto;
+  background: black;
+  display: block;
+  color: #FFF;
 }

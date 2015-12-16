@@ -1,13 +1,20 @@
 Template.leaderboard.helpers({
   users: function(){
-    //return only valid users (i.e. that have a username)
-    return Meteor.users.find({'profile.name' : {$exists: 1}}, {sort: {'profile.score': -1}}).fetch();
+    //On compte les réponses pour le leaderboard
+
+    var tabAnswers = Answers.find({}).fetch();
+    var tabResults = [];
+    var tabgrouped = _.groupBy(_.pluck(tabAnswers, 'username'));
+
+    for (i in tabgrouped) {
+      tabResults.push({username : i, score : tabgrouped[i].length});
+    }
+
+    tabResults.sort(function(a, b) {return b.score - a.score})
+
+    return tabResults;
   },
   lastGoodAnswer: function(){
-    if(Meteor.users.findOne({}, {sort: {'profile.lastgoodanswer': -1}}).profile.name){
-      return '<span class="animated linear bounceInRight">' + Meteor.users.findOne({}, {sort: {'profile.lastgoodanswer': -1}}).profile.name + '</span>';
-    }else{
-      return null;
-    }
+    return '<span class="animated linear bounceInRight">' + Answers.findOne({}, {sort: {'answerTime': -1}}).username + '</span>';
   }
 });

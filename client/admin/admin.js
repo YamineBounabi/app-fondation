@@ -24,7 +24,7 @@ Template.admin.helpers({
 
 Template.admin.events({
   "submit #addquestion": function(event, template){
-    console.log("jhk");
+
       event.preventDefault();
 
       var tabAnswers = [];
@@ -49,8 +49,7 @@ Template.admin.events({
     var elt = event.target;
     Questions.remove($(elt).data("id"));
   },
-  "click .deleteAllSessions": function(event){
-    //Remove all users
-    Meteor.call("removeAllUsers");
+  "click .deleteAllAnswers": function(event){
+    Meteor.call("removeAnswers");
   }
 });
