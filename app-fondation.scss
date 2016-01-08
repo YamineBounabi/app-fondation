@@ -3,8 +3,49 @@
   height: 100vh;
   position: fixed;
   z-index: 1000;
-  background: white url('loader.gif') no-repeat center;
+  background: white; /* url('loader.gif') no-repeat center;*/
   background-size: 50px;
   top: 0;
   left: 0;
+
+  h1{
+  	text-align: center;
+  	margin-top: 20%;
+  	font-size: 30px;
+  	color: #00A0D6;
+  	margin-top:100px; 
+  }
+
+  .simplon-preload{
+    -webkit-animation: tourne 0.50s linear infinite; /* Safari 4+ */
+    -moz-animation:  tourne 0.50s linear infinite; /* Fx 5+ */
+    -o-animation:   tourne 0.50s linear infinite; /* Opera 12+ */
+    animation:  tourne 0.50s linear infinite; /* IE 10+, Fx 29+ */
+		width: 100px;
+		height: 100px;
+		margin: auto;
+		display: block;
+		margin-top:30px; 
+	}
+}
+
+@-webkit-keyframes tourne{
+  to{
+  transform: rotateZ(-360deg) ;
+  }
+}
+@-moz-keyframes tourne{
+  to{
+  transform: rotateZ(-360deg) ;
+  }
+}
+@-o-keyframes tourne{
+  to{
+  transform: rotateZ(-360deg) ;
+  }
+}
+@keyframes tourne{
+  to{
+  transform: rotateZ(-360deg) ;
+  }
 }

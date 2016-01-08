@@ -45,6 +45,7 @@
   ul{
     text-align: center;
     margin-top: 35px;
+    padding-bottom: 20px;
 
     li:nth-child(1){
       background-color: #09127F;
@@ -64,22 +65,26 @@
 
 
     li{
-      height: 14.1vh;
+      /*height: 14.1vh;*/
       border-bottom: 1px solid;
       box-shadow: 4px 2px 13px white;
       border-radius: 50px;
       width: 97vw;
       margin: auto;
+      padding-top: 33px;
+      padding-bottom:33px;
 
       a{
         text-decoration: none;
         color: white;
         display: block;
         height: 100%;
-        padding-top: 22px;
+        /*padding-top: 22px;*/
         font-size: 16px;
         border: none;
         border: 0;
+        margin: auto;
+        width: 95%
       }
     }
 

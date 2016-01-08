@@ -33,7 +33,7 @@ Template.quizz.events({
        Meteor.call('insertAnswer',Session.get("username"),questionId);
 
        //Envoi d'un ordre à l'API (via le serveur)
-       Meteor.call("motordown");
+       //Meteor.call("motordown");
 
        //Ajout de la question à la liste déjà répondu
        if(Session.get("tabanswered")){
